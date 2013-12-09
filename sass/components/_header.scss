@@ -1,0 +1,82 @@
+#header, %header-animated {
+  position: relative;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+#header {
+  background-color: #06a;
+  padding: 0;
+  overflow: hidden;
+  @include box-shadow(0 0 5px #000);
+  
+  @include animation(header-intro 1s);
+}
+
+#site-name {
+  padding-top: 10px;
+  margin-left: 100px;
+  width: 320px;
+  font-size: 1.5em;
+  
+  @extend %header-animated;
+  @include animation(text-intro 1.5s);
+  
+  > a {
+    color: #FFF;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#site-slogan {
+  color: #FFF;
+  margin-left: 180px;
+  width: 280px;
+  @extend %header-animated;
+  @include animation(text-intro 2s);
+}
+
+#logo {
+  margin-right: -80px;
+  
+  > img {
+    margin: 0 0 -80px 10px;/*
+    @extend %header-animated;
+    @include animation(logo-intro 1.4s);*/
+  }
+}
+      
+@include keyframes(header-intro) {
+  0% {
+    top: -150px;
+    height: 100px;
+    margin-bottom: 0;
+  }
+  70% {
+    top: 0px;
+    margin-bottom: -20px;
+    height: 120px;
+  }
+}
+
+@include keyframes(text-intro) {
+  0% {
+    top: -100px;
+    left: 70px;
+  }
+  50% {
+    top: 30px;
+    left: 50px;
+  }
+}
+/*
+@include keyframes(logo-intro) {
+  0% {
+    left: -100px;
+    top: -150px;
+  }
+}*/

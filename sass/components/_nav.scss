@@ -1,0 +1,78 @@
+#navigation {
+  position: relative;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background-color: #07b;
+  
+  @include box-shadow(0 0 5px #000);
+  @include animation(nav-intro 0.8s);
+}
+
+#main-menu {
+  outline: 0;
+  > ul.links {
+    display: block;
+    padding: 0;
+    list-style-type: none;
+    margin: 0 {
+      left: 140px;
+    }
+    
+    > li {
+      float: left;
+      margin: 0 2px;
+    }
+  }
+}
+
+#main-menu > ul > li > a {
+  line-height: 30px;
+  display: block;
+  background-color: #08c;
+  text-decoration: none;
+  color: #FFF;
+  padding: 0 20px;
+  
+  &.active {
+    background-color: #06a;
+    @include box-shadow(0 0 3px #444 inset);
+  }
+  
+  &:hover {
+    text-decoration: none;
+    color: #FFF;
+    @extend .active;
+    background-color: #08f;
+  }
+}
+
+@include keyframes(nav-intro) {
+  0% {
+    top: -200px;
+  }
+  
+  50% {
+    top: -200px;
+  }
+}
+
+#secondary-menu {
+  z-index: 15;
+  position: relative;
+  opacity: 1;
+  @include animation(secondary-intro 2s);
+  > ul > li > a {
+    color: #FFF;
+  }
+}
+
+@include keyframes(secondary-intro) {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+}
