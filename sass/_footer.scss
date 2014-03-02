@@ -1,0 +1,10 @@
+@import "compass";
+@import "mixins";
+
+#footer {
+  background-color: #06a;
+  color: #FFF;
+  text-align: center;
+  line-height: 50px;
+  @include box-shadow(0 0 5px #000);
+}

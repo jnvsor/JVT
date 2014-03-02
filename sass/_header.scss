@@ -1,0 +1,91 @@
+@import "compass";
+@import "mixins";
+
+#header {
+  height: 100px;
+  z-index: 10;
+  
+  background-color: #06a;
+  @include box-shadow(0 0 5px #000);
+  
+  @include animation(header-intro 1s);
+  
+  &, %header-animated {
+    position: relative;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  > a {
+    color: #FFF;
+    
+    &:hover {
+      text-decoration: none;
+    }
+    
+    > h2 {
+      display: none;
+    }
+    
+    > #title {
+      @extend %header-animated;
+      padding-top: 10px;
+      margin-left: 100px;
+      font-size: 1.5em;
+      @include animation(text-intro 1.5s);
+      width: 300px;
+    }
+      
+    > #subtitle {
+      @extend %header-animated;
+      margin-left: 180px;
+      font-size: 1.17em;
+      @include animation(text-intro 2s);
+      width: 200px;
+    }
+    
+    > img {
+      @extend %header-animated;
+      margin: -30px 0 -20px 10px;
+      // Webkit expands header's hitbox to img size, makes #header overlay nav,
+      // then you can't hover over the top ~15px of nav links, hence the
+      // negative bottom margin. The rest are just for positioning.
+      @include animation(logo-intro 1.4s);
+    }
+  }
+}
+
+@include keyframes(header-intro) {
+  0% {
+    top: -300;
+    height: 100;
+    margin-bottom: 0;
+  }
+  80% {
+    top: 0;
+    margin-bottom: -20px;
+    height: 120;
+  }
+}
+
+@include keyframes(text-intro) {
+  0% {
+    top: -100;
+    left: 70;
+  }
+  50% {
+    top: 30;
+    left: 50;
+  }
+}
+
+@include keyframes(logo-intro) {
+  0% {
+    left: -200;
+  }
+  
+  60% {
+    left: -200;
+  }
+}

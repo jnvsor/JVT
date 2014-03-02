@@ -1,0 +1,30 @@
+@import "compass";
+@import "mixins";
+
+@mixin sticky-footer($height, $page-element: unquote("#page"), $footer-element: unquote("#footer")){
+  #{$footer-element} {
+    height: $height;
+  }
+  
+  #{$page-element} {
+    min-height: 100%;
+    padding-bottom: $height;
+    margin-bottom: -$height;
+    @include box-sizing(border-box);
+  }
+  
+  body {
+    height: 100%;
+  }
+}
+
+@include sticky-footer(50px);
+
+#main {
+  margin: 20px;
+}
+
+#content {
+  width: 960px;
+  margin: 0 auto;
+}

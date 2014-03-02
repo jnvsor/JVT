@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Jonathan Vollebregt's bowl of bytes</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="page">
+      <div id="header"><a href="/"><h2>Jonathan Vollebregt's bowl of bytes</h2><div id="title">Jonathan Vollebregt's</div><div id="subtitle">bowl of bytes</div><img src="images/logo.png" alt="Jonathan Vollebregt's bowl of random" /></a></div>
+      <nav>
+        <ul>
+          <li><a href="#" class="selected">Selected</a></li>
+          <li><a href="#">Unselected</a></li>
+        </ul>
+      </nav>
+      <div id="main">
+        <div id="content">
+          <h1>Testing some text</h1>
+          <p>Testing a paragraph with <a href="#">some links</a> in it.</p>
+          <p>And a paragraph followed by a &lt;pre&gt;&lt;code&gt;</p>
+          <pre><code>@mixin sticky-footer($height, $page-element: unquote("#page"), $footer-element: unquote("#footer")){
+  #{$footer-element} {
+    height: $height;
+  }
+  #{$page-element} {
+    min-height: 100%;
+    padding-bottom: $height;
+    margin-bottom: -$height;
+    @include box-sizing(border-box);
+  }
+  body {
+    height: 100%;
+  }
+}</code></pre>
+          <p>And some <code>inline code</code> to boot</p>
+          <p><blockquote>Keep it simple stupid!</blockquote></p>
+          <p>Inline... <q>Type type type</q> quote!</p>
+          <table>
+            <tr><th colspan=3>A table</th></tr>
+            <tr><td>1st data field</td><td>2nd data field</td><td>3rd data field</td></tr>
+            <tr><td colspan=3>And of course, what table would be complete without some rambling at the end</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="footer">&copy; Jonathan Vollebregt 2013</div>
+  </body>
+</html>

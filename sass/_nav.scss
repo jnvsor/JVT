@@ -1,0 +1,59 @@
+@import "compass";
+@import "mixins";
+
+nav {
+  height: 30px;
+  position: relative;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  
+  background-color: #07b;
+  @include box-shadow(0 0 5px #000);
+  
+  @include animation(nav-intro 0.8s);
+  
+  > ul {
+    margin: 0 {
+      left: 140px;
+    }
+    padding: 0;
+    list-style-type: none;
+    
+    > li {
+      float: left;
+      margin: 0 2px;
+      
+      > a {
+        line-height: 30px;
+        display: block;
+        background-color: #08c;
+        text-decoration: none;
+        color: #FFF;
+        padding: 0 20px;
+        
+        &.selected {
+          background-color: #06a;
+          @include box-shadow(0 0 3px #444 inset);
+        }
+        
+        &:hover {
+          text-decoration: none;
+          color: #FFF;
+          @extend .selected;
+          background-color: #08f;
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(nav-intro) {
+  0% {
+    top: -200;
+  }
+  
+  50% {
+    top: -200;
+  }
+}
